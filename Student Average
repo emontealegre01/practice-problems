@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+double avg_grade(double w, double x, double y, double z);
+char letter_grade(double q);
+
+int main()
+{
+    double g1,g2,g3,g4;
+    double avg;
+    string name;
+    cout << "What is your first name?" << endl;
+    cin>> name;
+    cout<< "Enter test grade #1: "<< endl;
+    cin>> g1;
+    cout<< "Enter test grade #2: "<<endl;
+    cin>> g2;
+    cout<< "Enter test grade #3: "<<endl;
+    cin>> g3;
+    cout<< "Enter test grade #4: "<<endl;
+    cin>> g4;
+    cout<< "Your name is: "<< name <<endl;
+    cout <<"Your grades are: " << g1<<" "<< g2<< " " <<g3 <<" and " << g4 <<endl;
+    cout<<"Your average is: "<<avg_grade(g1,g2,g3,g4)<<endl;
+    cout<<"Your final letter grade is: "<< letter_grade(avg_grade(g1,g2,g3,g4)) << endl;
+    return 0;
+}
+
+double avg_grade(double w, double x, double y, double z)
+{
+    double avg = (w + x + y + z)/4;
+    return avg;
+}
+
+char letter_grade(double q)
+{
+    if (q>=90)
+    {
+        return 'A';
+    }
+    else if (q>=80)
+    {
+        return 'B';
+    }
+    else if (q>=70)
+    {
+        return 'C';
+    }
+    else if (q>=60)
+    {
+        return 'D';
+    }
+    else{
+        return 'F';
+    }
+}
+
