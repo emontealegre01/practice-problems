@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+float circlearea(double x);
+
+int main()
+{
+    double radius;
+    cout << "Let's calculate the area of a circle!" << endl;
+    cout<< "What is your radius?"<<endl;
+    cin>> radius;
+    cout<< "The area of your circle is: "<< circlearea(radius)<<endl;
+    return 0;
+}
+
+float circlearea(double x)
+{
+    float area= (x*x)* M_PI;
+    return area;
+
+}
