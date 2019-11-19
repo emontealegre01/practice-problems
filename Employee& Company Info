@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+class InfoBasc
+{
+protected:
+    char Employer_name[30];
+    int ID;
+    char Gender;
+
+public:
+   void getInfo(void)
+    {
+        cout<< "What is your full name?"<<endl;;
+        cin.getline(Employer_name,30);
+        cout<<"What is your ID number?"<<endl;;
+        cin>>ID;
+        cout<<"What is your gender (F for female, M for male, O for other)"<<endl;;
+        cin>> Gender;
+    }
+
+};
+
+class InfoDep
+{
+protected:
+    char Department_name[30];
+    int employee_number;
+    char Department_manager[30];
+
+public:
+    void getDepInfo(void)
+    {
+        cout<<"What is your department name?"<<endl;
+        cin.ignore(1);
+        cin.getline(Department_name,30);
+        cout<<"What is the number of employees?"<<endl;
+        cin>> employee_number;
+        cout<<"Who is the department manager?"<<endl;
+        cin.ignore(1);
+        cin.getline(Department_manager,30);
+    }
+};
+
+class employer: private InfoBasc, private InfoDep
+{
+public:
+    void getEmployeeInfo(void)
+    {
+        cout<< "Enter employee's basic info: "<<endl;
+        getInfo();
+        cout << "Enter employee's department info: "<<endl;
+        getDepInfo();
+    }
+   void printEmployeeInfo(void)
+   {
+       cout<<"Employee's information is: "<<endl;
+       cout<<"Basic Information....."<<endl;
+       cout<<"Name: "<< Employer_name <<endl;
+       cout<<"Employee ID number: "<< ID<<endl;
+       cout<<"Gender: "<<Gender<<endl;
+
+       cout<<"\nDepartment Information....."<<endl;
+       cout<<"Department name: "<<Department_name<<endl;
+       cout<<"Employee number: "<< employee_number<<endl;
+       cout<<"Department manager: "<<Department_manager<<endl;
+   }
+};
+
+int main()
+{
+    employer p1;
+    p1.getEmployeeInfo();
+    p1.printEmployeeInfo();
+    return 0;
+}
