@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+string spellnum(int i);
+char letternum(int j);
+
+int main()
+{
+    int x;
+    cout << "Enter an integer from 0 to 9\n";
+    cin>> x;
+    cout<<"The number you entered is "<< spellnum(x)<<endl;
+    cout << "The Corresponding Letter is "<< letternum(x) << endl;
+}
+
+string spellnum(int i){
+    string str[] = {"zero", "one", "two", "three", "four", "five", "six", "seven","eight","nine"};
+    return str[i];
+
+}
+
+char letternum(int j){
+    string alphabet = "abcdefghij";
+    char x = alphabet[j];
+    return x;
+}
