@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+private:
+    string firstname, lastname;
+    int monthly_salary;
+public:
+    //Parameterized Constructor
+    Employee(string fname, string lname, int salary)
+    {
+    firstname = fname;
+    lastname = lname;
+    monthly_salary = salary;
+    }
+    void setfirstname(string fname)
+    {
+        firstname = fname;
+    }
+    void setlastname(string lname)
+    {
+        lastname = lname;
+    }
+    void setmonthly_salary(int salary)
+    {
+        monthly_salary = salary;
+    }
+    string getfname()
+    {
+        return firstname;
+    }
+    string getlname()
+    {
+        return lastname;
+    }
+    int getsalary()
+    {
+        if (monthly_salary > 0)
+        {
+            return monthly_salary;
+
+        }
+        else{
+            return 0;
+        }
+    }
+};
+
+int raise(int x);
+
+int main()
+{
+    Employee p1("John", "Doe", 150000);
+    Employee p2("Jane", "Smith", 750000);
+    cout << "Your name is: " << p1.getfname()<< " " << p1.getlname()<< " and your salary is: " << p1.getsalary()<<endl;
+    cout << "" << p1.getfname() << ", " << "if you get a 10% raise, your salary will then be: " << raise(p1.getsalary())<<endl;
+    cout << "Your name is: "  << p2.getfname()<< " " << p2.getlname()<< " and your salary is: " << p2.getsalary()<<endl;
+    cout << "" << p2.getfname() << ", " << "if you get a 10% raise, your salary will then be: " << raise(p2.getsalary())<<endl;
+
+    return 0;
+}
+
+int raise(int x)
+{
+    int percent = x * .10;
+    int raise = x + percent;
+    return raise;
+}
