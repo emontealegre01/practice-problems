@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+void digisum(int a);
+int main()
+{
+    int input;
+    cout << "Please enter an integer that is greater than or equal to 10" <<endl;
+    cin>> input;
+    digisum(input);
+}
+
+void digisum(int a)
+{
+int num1,num2,sum;
+    if(a>=10)
+    {
+       num1= a / 10;
+       num2= a%10;
+       sum = num1+num2;
+       cout<<"Your first integer was: "<< num1 <<endl;
+       cout<<"Your second integer was: "<< num2 <<endl;
+       cout<<"Your sum of both integers is: "<< sum <<endl;
+
+    }
+    else{
+        cout<<"You must enter 2 integers"<<endl;
+    }
+
+}
