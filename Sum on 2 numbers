@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Num
+{
+private:
+    int x,y;
+
+public:
+    //Parameterized Constructor
+    Num(int x1, int y1)
+    {
+        x=x1;
+        y=y1;
+    }
+    //Because x and y are private, we need this
+    int getx()
+    {
+        return x;
+    }
+    int gety()
+    {
+        return y;
+    }
+};
+
+int sum(int x, int y)
+{
+    int sum= x+y;
+    return sum;
+}
+int main()
+{
+    int num1, num2;
+    cout<<"Hello! Please enter 2 integers."<<endl;
+    cout<<"Num 1: "<<endl;
+    cin>>num1;
+    cout<<"Num 2: "<<endl;
+    cin>>num2;
+    Num p1 = Num(num1,num2);
+    cout << "p1.x = " << p1.getx()<< ", p1.y = "<< p1.gety()<< endl;
+    cout << "The sum of your numbers is: "<< sum(num1,num2)<<endl;
+    return 0;
+}
